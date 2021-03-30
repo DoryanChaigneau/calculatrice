@@ -1,31 +1,31 @@
 module.exports = {
 
-  additioner : (a, b) => {
-    return a + b;
+  addition : (a, b) => {
+    return a+b;
   },
 
-  soustraire : (a, b) => {
-    return a - b;
+  soustraction : (a, b) => {
+    return a-b;
   },
 
   multiplication : (a, b) => {
-    return a * b;
+    return a*b;
   },
 
   division : (a, b) => {
-    if (b === 0) {
-      throw new Error('Division par zéro impossibles.');
+    if(b === 0){
+      throw new Error('Division par 0 non autorisé');
     }
+    return a/b;
   },
 
-  pourcentage : (a, prct) => {
-    let result = CalculService.multiplication(a, prct);
-    result = CalculService.division(result, 100);
-    return result;
+  pourcentage: (a, b) => {
+    const c = CalculService.division(a, b);
+    return CalculService.multiplication(c, 100);
   },
 
-  pow: (a) => {
-    return CalculService.multiplication(a,a);
+  carre: (a) => {
+    return CalculService.multiplication(a, a);
   }
 
-};
+}
